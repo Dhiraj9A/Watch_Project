@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Watch</title>
+    <link rel="stylesheet" type="text/css" href="CSS/Style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="clock">
+            <div class="circle" id="sc" style="--cir:#04fc43"><i></i></div>
+            <div class="circle circle2" id="mn" style="--cir:#fee800"><i></i></div>
+            <div class="circle circle3" id="hr" style="--cir:#ff2972"><i></i></div>
+
+            <span style="--i:1;"><b>1</b></span>
+            <span style="--i:2;"><b>2</b></span>
+            <span style="--i:3;"><b>3</b></span>
+            <span style="--i:4;"><b>4</b></span>
+            <span style="--i:5;"><b>5</b></span>
+            <span style="--i:6;"><b>6</b></span>
+            <span style="--i:7;"><b>7</b></span>
+            <span style="--i:8;"><b>8</b></span>
+            <span style="--i:9;"><b>9</b></span>
+            <span style="--i:10;"><b>10</b></span>
+            <span style="--i:11;"><b>11</b></span>
+            <span style="--i:12;"><b>12</b></span>
+        </div>
+    </div>
+    <script>
+        
+            let hr = document.querySelector('#hr');
+            let mn = document.querySelector('#mn');
+            let sc = document.querySelector('#sc');
+            setInterval(() => {
+                let day = new Date();
+                let hours= day.getHours() *30;
+                let minutes= day.getMinutes() * 6;
+                let seconds = day.getSeconds() * 6;
+                
+                hr.style.transform = `rotateZ(${hours}deg)`;
+                mn.style.transform = `rotateZ(${minutes}deg)`;
+                sc.style.transform = `rotateZ(${seconds}deg)`;
+                
+             })
+    </script>
+</body>
+
+</html>
